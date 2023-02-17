@@ -21,14 +21,12 @@ public class Manager : MonoBehaviour
     private int numberOfActiveCollectibles = 0;
     private GameObject player;
     private int timing = 15;
-    public int myScore = 0;
-    public int highScore = 0;
+    private int myScore = 0;
     private AudioSource calm;
 
     void Start()
     {
         //calm = GetComponent<AudioSource>();
-        highScore = PlayerPrefs.GetInt("highScore", 0);
         myScore = PlayerPrefs.GetInt("myScore", 0);
         player = Instantiate(playerPrefab);
         //player.transform.position = Vector3.zero;
@@ -58,12 +56,11 @@ public class Manager : MonoBehaviour
         if (timing <= 0)
         {
             PlayerPrefs.SetInt("myScore", gameScore);
-            if (gameScore > highScore)
+            if (gameScore > PlayerPrefs.GetInt("highScore", 0))
             {
                 PlayerPrefs.SetInt("highScore", gameScore);
             }
             Debug.Log("High Score");
-            timer.text = "GAME OVER!!";
             UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
 
@@ -92,33 +89,16 @@ public class Manager : MonoBehaviour
     IEnumerator instantiateSmallRock()
     {
         yield return new WaitForSeconds(Random.Range(1, 3));
-        Vector3 distance;
-        int x;
-        int y;
-        int z;
-        do
-        {
-            x = Random.Range(-10, 10);
-            y = Random.Range(2, 8);
-            z = Random.Range(10, 20);
-            distance = new Vector3(x - player.transform.position.x, y, z - player.transform.position.z);
-
-        } while (distance.magnitude < 2);
-
-        //if the object passes the border
-        if (distance.x >= 11 || distance.x <= -11 || distance.z >= 21 || distance.z <= 9)
-        {
-            x = Random.Range(-8, 8);
-            z = Random.Range(-3, 3);
-            distance = new Vector3(x, 0, z);
-        }
+        int x = Random.Range(-150, 150);
+        int y = Random.Range(-80, 80);
+        int z = 100;
 
         GameObject instance = Instantiate(asteroid1);
-        instance.transform.position = new Vector3(distance.x, distance.y, distance.z);
+        instance.transform.position = new Vector3(x, y, z);
         Asteroid collectable = instance.GetComponent<Asteroid>();
         collectable.manager = this;
 
         numberOfActiveCollectibles++;
-        Debug.Log(distance.x + "," + distance.y + "," + distance.z);
+        Debug.Log(x + "," + y + "," + z);
     }
 }

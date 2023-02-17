@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 952018969031889720}
   - component: {fileID: 952018969030889976}
   - component: {fileID: 952018969023174392}
+  - component: {fileID: -7011584692209995462}
   m_Layer: 0
   m_Name: PlayerSpaceShip
   m_TagString: Player
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952018969033150264}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -11.1, z: 71.1}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalPosition: {x: -0, y: -11.1, z: 35}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,3 +100,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &-7011584692209995462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952018969033150264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ef37f36c6e03544bbcd23203847b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  lerpConstant: 0.05
