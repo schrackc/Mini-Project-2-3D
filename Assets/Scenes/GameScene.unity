@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 266ba454b21374046b37b2de3982c55e, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.0067386897, g: 0.0058521735, b: 0.006456415, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -331,9 +331,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameScore: 0
-  smallAsteroid: {fileID: 5427450157002489687, guid: e97689b9bff64184c87a9f77e2e5f598, type: 3}
+  asteroid1: {fileID: 151664, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
+  asteroid2: {fileID: 141316, guid: 84cc3cd234dfc9d4d9d2e92c0eb0af75, type: 3}
+  asteroid3: {fileID: 130102, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
   text: {fileID: 0}
-  playerPrefab: {fileID: 1221126948856833955, guid: 97801b54c7270ec4da501e352c759b19, type: 3}
+  playerPrefab: {fileID: 952018969033150264, guid: dec6193e63e93f045a96cce4bcc50551, type: 3}
   timer: {fileID: 0}
   myScore: 0
   highScore: 0

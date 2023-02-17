@@ -8,8 +8,9 @@ public class Manager : MonoBehaviour
 {
     // Start is called before the first frame update
     public int gameScore = 0;
-    public GameObject smallAsteroid;
-    //public GameObject medAsteroid;
+    public GameObject asteroid1;
+    public GameObject asteroid2;
+    public GameObject asteroid3;
 
     public TMP_Text text;
     public GameObject playerPrefab;
@@ -112,7 +113,7 @@ public class Manager : MonoBehaviour
             distance = new Vector3(x, 0, z);
         }
 
-        GameObject instance = Instantiate(smallAsteroid);
+        GameObject instance = Instantiate(asteroid1);
         instance.transform.position = new Vector3(distance.x, distance.y, distance.z);
         Asteroid collectable = instance.GetComponent<Asteroid>();
         collectable.manager = this;
