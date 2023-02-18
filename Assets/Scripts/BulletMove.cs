@@ -27,7 +27,7 @@ public class BulletMove : MonoBehaviour
         
         Move();
 
-        if (this.transform.position.z > 20)
+        if (this.transform.position.z > 40)
             Destroy(this.gameObject);
     }
 

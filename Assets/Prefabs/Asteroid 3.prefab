@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 469044}
   - component: {fileID: 5428902}
   - component: {fileID: 8332971748696442519}
+  - component: {fileID: 5878989073537455089}
   m_Layer: 0
   m_Name: Asteroid 3
   m_TagString: Enemy
@@ -128,6 +129,19 @@ MonoBehaviour:
   spinSpeed: 1
   pointValue: 5
   manager: {fileID: 0}
+--- !u!135 &5878989073537455089
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130102}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.6
+  m_Center: {x: 0, y: 0, z: 0.1}
 --- !u!1 &153142
 GameObject:
   m_ObjectHideFlags: 0

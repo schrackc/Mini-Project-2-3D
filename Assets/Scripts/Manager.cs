@@ -89,8 +89,8 @@ public class Manager : MonoBehaviour
     IEnumerator instantiateSmallRock()
     {
         yield return new WaitForSeconds(Random.Range(1, 3));
-        int x = Random.Range(-150, 150);
-        int y = Random.Range(-80, 80);
+        int x = Random.Range(-15, 15);
+        int y = Random.Range(-8, 8);
         int z = 100;
 
         GameObject instance = Instantiate(asteroid1);
@@ -100,5 +100,24 @@ public class Manager : MonoBehaviour
 
         numberOfActiveCollectibles++;
         Debug.Log(x + "," + y + "," + z);
+    }
+
+    public void instantiateMediumRock(float firstX, float firstY, float firstZ)
+    {
+
+        Vector2 distance;
+
+        distance = new Vector2(firstX, firstY);
+
+        GameObject instance = Instantiate(asteroid2);
+        instance.transform.position = new Vector3(distance.x, distance.y + 0.01f, 0);
+        Asteroid rock1 = instance.GetComponent<Asteroid>();
+        rock1.manager = this;
+
+        GameObject instance2 = Instantiate(asteroid2);
+        instance2.transform.position = new Vector3(distance.x, distance.y - 0.01f, 0);
+        Asteroid rock2 = instance2.GetComponent<Asteroid>();
+        rock2.manager = this;
+
     }
 }

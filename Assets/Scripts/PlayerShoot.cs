@@ -39,7 +39,7 @@ public class PlayerShoot : MonoBehaviour
             go.transform.rotation = shootPoint.transform.rotation;
             BulletMove b = go.GetComponent<BulletMove>();
             b.speed = 1f;
-            //b.direction = new Vector3(worldPosition.x/100, worldPosition.y/100, 1);
+            //b.direction = new Vector3(worldPosition.x/10, worldPosition.y/200, 1);
             Debug.Log(b.direction);
             StartCoroutine(CoolDown());
         }
