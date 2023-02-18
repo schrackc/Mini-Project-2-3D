@@ -105,17 +105,17 @@ public class Manager : MonoBehaviour
     public void instantiateMediumRock(float firstX, float firstY, float firstZ)
     {
 
-        Vector2 distance;
+        Vector3 distance;
 
-        distance = new Vector2(firstX, firstY);
+        distance = new Vector3(firstX, firstY, firstZ);
 
         GameObject instance = Instantiate(asteroid2);
-        instance.transform.position = new Vector3(distance.x, distance.y + 0.01f, 0);
+        instance.transform.position = new Vector3(distance.x, distance.y + 0.01f, distance.z);
         Asteroid rock1 = instance.GetComponent<Asteroid>();
         rock1.manager = this;
 
         GameObject instance2 = Instantiate(asteroid2);
-        instance2.transform.position = new Vector3(distance.x, distance.y - 0.01f, 0);
+        instance2.transform.position = new Vector3(distance.x, distance.y - 0.01f, distance.z);
         Asteroid rock2 = instance2.GetComponent<Asteroid>();
         rock2.manager = this;
 

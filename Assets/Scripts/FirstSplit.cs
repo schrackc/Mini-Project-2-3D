@@ -23,11 +23,7 @@ public class FirstSplit : MonoBehaviour
         if (gameObject.tag == "Bullet")
         {
             manager.instantiateMediumRock(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-            Destroy(this.gameObject);
-        }
-        if (gameObject.tag == "Player")
-        {
-            //Need Player Damage with Player Health
+            Debug.Log(this.transform.position.x + this.transform.position.y + this.transform.position.z);
             Destroy(this.gameObject);
         }
     }
