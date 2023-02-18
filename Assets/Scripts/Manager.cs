@@ -14,15 +14,18 @@ public class Manager : MonoBehaviour
 
     public TMP_Text text;
     public GameObject playerPrefab;
+    public GameObject enemyPrefab;
     public TMP_Text timer;
     //public GameObject sodaGrab;
 
     //----Private vars
     private int numberOfActiveCollectibles = 0;
     private GameObject player;
+    private GameObject enemy;
     private int timing = 15;
     private int myScore = 0;
     private AudioSource calm;
+    private bool bossDead = false;
 
     void Start()
     {
@@ -63,7 +66,7 @@ public class Manager : MonoBehaviour
         //game rules
         /*if (!calm.isPlaying)
             calm.PlayOneShot(calm.clip, 0.2f);*/
-        if (timing <= 0)
+        if (bossDead)
         {
             PlayerPrefs.SetInt("myScore", gameScore);
             if (gameScore > PlayerPrefs.GetInt("highScore", 0))
@@ -253,5 +256,8 @@ public class Manager : MonoBehaviour
     {
         yield return new WaitForSeconds(90);
         Debug.Log("Spawning Boss Fight");
+        enemy = Instantiate(enemyPrefab);
+        EnemyShipAI boss = enemy.GetComponent<EnemyShipAI>();
+        boss.manager = this;
     }
 }

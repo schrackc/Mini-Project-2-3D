@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0067198616, g: 0.00584782, b: 0.0064350343, a: 1}
+  m_IndirectSpecularColor: {r: 0.0067386897, g: 0.0058521735, b: 0.006456415, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -336,6 +336,7 @@ MonoBehaviour:
   asteroid3: {fileID: 130102, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
   text: {fileID: 0}
   playerPrefab: {fileID: 952018969033150264, guid: dec6193e63e93f045a96cce4bcc50551, type: 3}
+  enemyPrefab: {fileID: 1078499313926768, guid: 276f86b804eccb3448f2d2c6d1ac0b07, type: 3}
   timer: {fileID: 0}
 --- !u!4 &1916270963
 Transform:
