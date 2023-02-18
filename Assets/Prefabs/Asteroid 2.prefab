@@ -146,10 +146,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5050d9716edbef49a94cb23bafe3486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 9
   spinSpeed: -0.5
   pointValue: 5
   manager: {fileID: 0}
+  direction: {x: 0, y: 0, z: -1}
+  enemyType: 1
 --- !u!135 &6374612015120119370
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class FirstSplit : MonoBehaviour
         GameObject gameObject = other.gameObject;
         if (gameObject.tag == "Bullet")
         {
-            manager.instantiateMediumRock(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+            manager.splitMediumRock(this.transform.position.x, this.transform.position.y, this.transform.position.z);
             Debug.Log(this.transform.position.x + this.transform.position.y + this.transform.position.z);
             Destroy(this.gameObject);
         }

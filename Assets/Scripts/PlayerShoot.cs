@@ -38,7 +38,7 @@ public class PlayerShoot : MonoBehaviour
             go.transform.position = shootPoint.transform.position;
             go.transform.rotation = shootPoint.transform.rotation;
             BulletMove b = go.GetComponent<BulletMove>();
-            b.speed = 1f;
+            b.speed = 2f;
             //b.direction = new Vector3(worldPosition.x/10, worldPosition.y/200, 1);
             Debug.Log(b.direction);
             StartCoroutine(CoolDown());
@@ -49,7 +49,7 @@ public class PlayerShoot : MonoBehaviour
 
     IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         inCoolDown = false;
     }
 }
