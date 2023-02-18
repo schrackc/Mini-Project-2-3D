@@ -9,15 +9,19 @@ public class EnemyShipAI : MonoBehaviour
 
     private bool introMoveEnd = false;
     private float glideSpeed = 10;
+    private AudioSource bossMusic;
     // Start is called before the first frame update
     void Start()
     {
+        bossMusic = GetComponent<AudioSource>();
         transform.position = new Vector3(0, 150, 125);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!bossMusic.isPlaying)
+            bossMusic.PlayOneShot(bossMusic.clip, 0.5f);
         //AI Fighting
         if (introMoveEnd)
         {

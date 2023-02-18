@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5050d9716edbef49a94cb23bafe3486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 8.5
   spinSpeed: 1
   pointValue: 5
   manager: {fileID: 0}

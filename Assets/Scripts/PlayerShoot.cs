@@ -17,7 +17,7 @@ public class PlayerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //PewPew = GetComponent<AudioSource>();
+        PewPew = GetComponent<AudioSource>();
 
     }
 
@@ -31,8 +31,8 @@ public class PlayerShoot : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && !inCoolDown)
         {
-            /*if (!PewPew.isPlaying)
-                PewPew.PlayOneShot(PewPew.clip, 0.6f);*/
+            if (!PewPew.isPlaying)
+                PewPew.PlayOneShot(PewPew.clip, 0.6f);
             inCoolDown = true;
             GameObject go = Instantiate(bullet);
             go.transform.position = shootPoint.transform.position;
