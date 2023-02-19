@@ -15,7 +15,7 @@ public class Manager : MonoBehaviour
     public TMP_Text text;
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
-    public TMP_Text timer;
+    public bool bossDead = false;
     //public GameObject sodaGrab;
 
     //----Private vars
@@ -26,13 +26,15 @@ public class Manager : MonoBehaviour
     private int myScore = 0;
     private AudioSource calm;
     private bool playMusic = true;
-    private bool bossDead = false;
+    private int testScore = 0;
 
     void Start()
     {
         calm = GetComponent<AudioSource>();
         myScore = PlayerPrefs.GetInt("myScore", 0);
         player = Instantiate(playerPrefab);
+        PlayerMove play = player.GetComponent<PlayerMove>();
+        play.manager = this;
         //player.transform.position = Vector3.zero;
         if (player == null)
         {
@@ -55,8 +57,7 @@ public class Manager : MonoBehaviour
         StartCoroutine(HardDifficulty());
         StartCoroutine(SpawnBoss());
 
-        //text.text = "Score: 0";
-        //timer.text = "Time: 15";
+        text.gameObject.SetActive(false);
 
         //StartCoroutine(theTime());
     }
@@ -78,9 +79,24 @@ public class Manager : MonoBehaviour
                 PlayerPrefs.SetInt("highScore", gameScore);
             }
             Debug.Log("High Score");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("EndGameScene");
+            StartCoroutine(endGame());
         }
 
+        //print Score every 100
+        if (gameScore % 100 == 0 && gameScore != testScore)
+        {
+            testScore = gameScore;
+            StartCoroutine(printScore());
+        }
+
+    }
+
+    private IEnumerator printScore()
+    {
+        text.gameObject.SetActive(true);
+        text.text = "Score: " + gameScore;
+        yield return new WaitForSeconds(1);
+        text.gameObject.SetActive(false);
     }
     public void incrementScore(int scoreValue)
     {
@@ -91,16 +107,6 @@ public class Manager : MonoBehaviour
 
         //StartCoroutine(instantiateSmallRock());
 
-    }
-
-    IEnumerator theTime()
-    {
-        while (timing > 0)
-        {
-            yield return new WaitForSeconds(1);
-            timing--;
-            timer.text = "Time: " + timing;
-        }
     }
 
     IEnumerator instantiateSmallRock()
@@ -258,7 +264,7 @@ public class Manager : MonoBehaviour
 
     IEnumerator SpawnBoss()
     {
-        yield return new WaitForSeconds(84);
+        yield return new WaitForSeconds(80);
         playMusic = false;
         calm.Stop();
         yield return new WaitForSeconds(1);
@@ -266,5 +272,11 @@ public class Manager : MonoBehaviour
         enemy = Instantiate(enemyPrefab);
         EnemyShipAI boss = enemy.GetComponent<EnemyShipAI>();
         boss.manager = this;
+    }
+
+    IEnumerator endGame()
+    {
+        yield return new WaitForSeconds(5);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EndGameScene");
     }
 }

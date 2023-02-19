@@ -36,7 +36,7 @@ public class PlayerShoot : MonoBehaviour
             inCoolDown = true;
             GameObject go = Instantiate(bullet);
             go.transform.position = shootPoint.transform.position;
-            go.transform.rotation = shootPoint.transform.rotation;
+            go.transform.rotation = Quaternion.Euler(0,0,0);
             BulletMove b = go.GetComponent<BulletMove>();
             b.speed = 2f;
             //b.direction = new Vector3(worldPosition.x/10, worldPosition.y/200, 1);

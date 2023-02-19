@@ -32,6 +32,7 @@ public class ShipHealth : MonoBehaviour
         GameObject gameObject = other.gameObject;
         if (gameObject.tag == "Enemy" || gameObject.tag == "Bullet")
         {
+            Destroy(gameObject);
             health--;
             greenHealth.transform.localScale = new Vector3(health / startHealth, 0.05f, 0.001f);
             StartCoroutine(tempShow());
