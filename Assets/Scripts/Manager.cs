@@ -78,7 +78,7 @@ public class Manager : MonoBehaviour
                 PlayerPrefs.SetInt("highScore", gameScore);
             }
             Debug.Log("High Score");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("EndGameScene");
         }
 
     }
