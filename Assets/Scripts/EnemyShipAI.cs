@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyShipAI : MonoBehaviour
 {
     public float speed;
+    public float health = 20;
     public Manager manager;
 
     private bool introMoveEnd = false;
@@ -33,6 +34,19 @@ public class EnemyShipAI : MonoBehaviour
             introMovement();
             if (transform.position.y <= 0)
                 introMoveEnd = true;
+        }
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject gameObject = other.gameObject;
+        if (gameObject.tag == "Bullet")
+        {
+            health--;
         }
     }
 

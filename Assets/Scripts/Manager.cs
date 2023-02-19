@@ -25,11 +25,12 @@ public class Manager : MonoBehaviour
     private int timing = 15;
     private int myScore = 0;
     private AudioSource calm;
+    private bool playMusic = true;
     private bool bossDead = false;
 
     void Start()
     {
-        //calm = GetComponent<AudioSource>();
+        calm = GetComponent<AudioSource>();
         myScore = PlayerPrefs.GetInt("myScore", 0);
         player = Instantiate(playerPrefab);
         //player.transform.position = Vector3.zero;
@@ -64,8 +65,11 @@ public class Manager : MonoBehaviour
     void Update()
     {
         //game rules
-        /*if (!calm.isPlaying)
-            calm.PlayOneShot(calm.clip, 0.2f);*/
+        if (!calm.isPlaying && (playMusic = true))
+        {
+            calm.PlayOneShot(calm.clip, 0.2f);
+        }
+            
         if (bossDead)
         {
             PlayerPrefs.SetInt("myScore", gameScore);
@@ -254,7 +258,10 @@ public class Manager : MonoBehaviour
 
     IEnumerator SpawnBoss()
     {
-        yield return new WaitForSeconds(90);
+        yield return new WaitForSeconds(84);
+        playMusic = false;
+        calm.Stop();
+        yield return new WaitForSeconds(1);
         Debug.Log("Spawning Boss Fight");
         enemy = Instantiate(enemyPrefab);
         EnemyShipAI boss = enemy.GetComponent<EnemyShipAI>();
