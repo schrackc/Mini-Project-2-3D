@@ -7,6 +7,7 @@ public class EnemyShipAI : MonoBehaviour
     public float speed;
     public float health = 20;
     public Manager manager;
+    public GameObject baseShip;
 
     private bool introMoveEnd = false;
     private float glideSpeed = 10;
@@ -39,6 +40,10 @@ public class EnemyShipAI : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        while(this.transform.position.x > 20 && (this.transform.position.x < -20))
+        {
+            Movement();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,6 +60,15 @@ public class EnemyShipAI : MonoBehaviour
         Vector3 direction = new Vector3(0, -1, 0);
         Vector3.ClampMagnitude(direction, 2);
         direction = Vector3.Lerp(direction, Vector2.zero, 0.2f);
+        transform.position += glideSpeed * Time.deltaTime * direction;
+    }
+
+    private void Movement()
+    {
+        Vector3 direction = new Vector3(Random.Range(1, -1), Random.Range(1, -1), 0);
+        Vector3.ClampMagnitude(direction, 2);
+        direction = Vector3.Lerp(direction, Vector2.zero, 0.2f);
+        this.transform.position = direction;
         transform.position += glideSpeed * Time.deltaTime * direction;
     }
 }

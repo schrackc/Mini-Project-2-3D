@@ -55,6 +55,7 @@ MonoBehaviour:
   speed: 5
   health: 20
   manager: {fileID: 0}
+  baseShip: {fileID: 0}
 --- !u!82 &649869337406153709
 AudioSource:
   m_ObjectHideFlags: 0
@@ -548,6 +549,7 @@ GameObject:
   - component: {fileID: 23202303624397802}
   - component: {fileID: 7337267131106557336}
   - component: {fileID: 8340384966226049099}
+  - component: {fileID: 4792283036543418605}
   m_Layer: 0
   m_Name: Spaceship_Base
   m_TagString: Untagged
@@ -649,6 +651,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 85.87788, y: 115.42377, z: 21.555723}
   m_Center: {x: 3.926995, y: 13.000184, z: -3.2814674}
+--- !u!114 &4792283036543418605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614117294494184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2da9905821a204db647f05933f0a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
 --- !u!1 &1887205322381145136
 GameObject:
   m_ObjectHideFlags: 0

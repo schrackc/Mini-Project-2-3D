@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirstSplit : MonoBehaviour
+public class ShipHealth : MonoBehaviour
 {
-    public Manager manager;
+    public float health = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,10 @@ public class FirstSplit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,9 +25,7 @@ public class FirstSplit : MonoBehaviour
         GameObject gameObject = other.gameObject;
         if (gameObject.tag == "Bullet")
         {
-            manager.splitMediumRock(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-            Debug.Log(this.transform.position.x + this.transform.position.y + this.transform.position.z);
-            Destroy(this.gameObject);
+            health--;
         }
     }
 }
