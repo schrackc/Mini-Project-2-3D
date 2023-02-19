@@ -468,7 +468,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -658,6 +658,7 @@ GameObject:
   - component: {fileID: 1668353169}
   - component: {fileID: 1668353168}
   - component: {fileID: 1668353170}
+  - component: {fileID: 1668353171}
   m_Layer: 0
   m_Name: StartManager
   m_TagString: Untagged
@@ -791,6 +792,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1668353171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668353167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3ea54b5034c86429d70f74a06ba052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid1: {fileID: 151664, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
 --- !u!1 &1822860565
 GameObject:
   m_ObjectHideFlags: 0
