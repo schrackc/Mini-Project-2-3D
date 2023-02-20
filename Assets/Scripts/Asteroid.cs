@@ -8,6 +8,7 @@ public class Asteroid : MonoBehaviour
     public float spinSpeed;
     public int pointValue = 5;
     public Manager manager;
+    public ParticleSystem exp;
 
     public Vector3 direction;
     private Vector3 rotation;
@@ -56,12 +57,15 @@ public class Asteroid : MonoBehaviour
                 default:
                     break;
             }
-            Destroy(this.gameObject);
+            StartCoroutine(destroy());
         }
-        if (gameObject.tag == "Player")
-        {
-            //Need Player Damage with Player Health
-            //Destroy(this.gameObject);
-        }
+    }
+    private IEnumerator destroy()
+    {
+        exp = Instantiate(exp);
+        exp.transform.position = transform.position;
+        exp.Play();
+        transform.position = new Vector3(0, -100, 20);
+        yield return new WaitForSeconds(4f);
     }
 }

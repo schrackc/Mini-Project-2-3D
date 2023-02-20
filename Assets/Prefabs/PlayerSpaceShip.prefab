@@ -155,7 +155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenHealth: {fileID: 3258954266215266730}
   redHealth: {fileID: 1567700358925080511}
-  health: 10
+  bigExplosion: {fileID: 3568661551903429160, guid: e5ece11fa5588384c8fa709b09f33a3b, type: 3}
+  smallExplosion: {fileID: 1702128991185710156, guid: 5a9d9b5777dd31a438aeac80edb069d8, type: 3}
+  health: 5
 --- !u!64 &-6495359600412790825
 MeshCollider:
   m_ObjectHideFlags: 0

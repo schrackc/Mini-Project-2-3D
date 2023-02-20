@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyShipAI : MonoBehaviour
 {
     public float speed;
-    public float health = 40;
+    public float health = 30;
     public Manager manager;
     //public GameObject baseShip;
 
@@ -73,7 +73,7 @@ public class EnemyShipAI : MonoBehaviour
         //Change waypoint
         if (gameObject.tag == "Waypoint")
         {
-            int waypointChoice = Random.Range(1, 3);
+            int waypointChoice = Random.Range(1, 4);
             //Set new waypoint
             if (gameObject.name == "Waypoint1")
             {
