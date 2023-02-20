@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7661495935640252933}
   - component: {fileID: 649869337406153709}
   - component: {fileID: -9151254348036224317}
-  - component: {fileID: -3899724294012712003}
+  - component: {fileID: 5938989979952759701}
+  - component: {fileID: 6766505051702245250}
   m_Layer: 0
   m_Name: EnemySpaceShip
   m_TagString: Enemy
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078499313926768}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 5.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -169,8 +170,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &-3899724294012712003
-MeshCollider:
+--- !u!65 &5938989979952759701
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -179,10 +180,22 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 50, y: 40, z: 10}
+  m_Center: {x: 0, y: 0, z: 50}
+--- !u!65 &6766505051702245250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078499313926768}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 130, y: 5, z: 20}
+  m_Center: {x: 0, y: -15, z: -30}
 --- !u!1 &1121495613802252
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,7 +740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887205322381145136}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -17.18, y: -2.46, z: 48.25}
+  m_LocalPosition: {x: -17.18, y: -2.46, z: 74.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -789,7 +802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7538982347484215002}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 17.18, y: -2.46, z: 48.25}
+  m_LocalPosition: {x: 17.18, y: -2.46, z: 69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -26,7 +26,6 @@ public class Manager : MonoBehaviour
     private int numberOfActiveCollectibles = 0;
     private GameObject player;
     private GameObject enemy;
-    private int timing = 15;
     private int myScore = 0;
     private AudioSource calm;
     private bool playMusic = true;
@@ -102,6 +101,11 @@ public class Manager : MonoBehaviour
 
     private IEnumerator printScore()
     {
+        text.gameObject.SetActive(true);
+        text.text = "Score: " + gameScore;
+        yield return new WaitForSeconds(1);
+        text.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1);
         text.gameObject.SetActive(true);
         text.text = "Score: " + gameScore;
         yield return new WaitForSeconds(1);
