@@ -23,7 +23,6 @@ public class ShipHealth : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("EndGameScene");
             Destroy(this.gameObject);
-            PlayerPrefs.SetInt("myScore", 0);
         }
     }
 

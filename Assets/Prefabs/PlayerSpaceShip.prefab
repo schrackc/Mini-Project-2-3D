@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  lerpConstant: 0.08
+  lerpConstant: 0.06
+  manager: {fileID: 0}
 --- !u!114 &2549203594877399171
 MonoBehaviour:
   m_ObjectHideFlags: 0

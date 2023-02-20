@@ -7,11 +7,12 @@ public class EnemyShipAI : MonoBehaviour
     public float speed;
     public float health = 20;
     public Manager manager;
-    public GameObject baseShip;
+    //public GameObject baseShip;
 
     private bool introMoveEnd = false;
     private float glideSpeed = 10;
     private AudioSource bossMusic;
+    private Vector3 direction;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,22 +28,26 @@ public class EnemyShipAI : MonoBehaviour
         //AI Fighting
         if (introMoveEnd)
         {
-
+            transform.position += glideSpeed * Time.deltaTime * direction;
         }
         //AI Intro movement down
         else
         {
             introMovement();
             if (transform.position.y <= 0)
+            {
                 introMoveEnd = true;
+                direction = chooseMovement();
+            }
         }
         if (health <= 0)
         {
             Destroy(this.gameObject);
         }
-        while(this.transform.position.x > 20 && (this.transform.position.x < -20))
+        
+        if (PlayerPrefs.GetString("Progress", "Stay") == "Finish")
         {
-            Movement();
+            //Play Explosion Particles
         }
     }
 
@@ -52,6 +57,7 @@ public class EnemyShipAI : MonoBehaviour
         if (gameObject.tag == "Bullet")
         {
             health--;
+            manager.bossDead = true;
         }
     }
 
@@ -63,12 +69,23 @@ public class EnemyShipAI : MonoBehaviour
         transform.position += glideSpeed * Time.deltaTime * direction;
     }
 
-    private void Movement()
+    private void Movement(int x, int y)
     {
-        Vector3 direction = new Vector3(Random.Range(1, -1), Random.Range(1, -1), 0);
+        Vector3 direction = new Vector3(x, y, 0);
         Vector3.ClampMagnitude(direction, 2);
-        direction = Vector3.Lerp(direction, Vector2.zero, 0.2f);
-        this.transform.position = direction;
+        direction = Vector3.Lerp(direction, direction, 0.2f);
+        //this.transform.position = direction;
         transform.position += glideSpeed * Time.deltaTime * direction;
+    }
+
+    private Vector3 chooseMovement()
+    {
+        int x = Random.Range(1, -1);
+        int y = Random.Range(1, -1);
+        Vector3 direction = new Vector3(x, y, 0);
+        Vector3.ClampMagnitude(direction, 2);
+        return direction = Vector3.Lerp(direction, Vector2.zero, 0.2f);
+        //this.transform.position = direction;
+        //transform.position += glideSpeed * Time.deltaTime * direction;
     }
 }

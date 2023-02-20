@@ -53,9 +53,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  health: 20
+  health: 30
   manager: {fileID: 0}
-  baseShip: {fileID: 0}
 --- !u!82 &649869337406153709
 AudioSource:
   m_ObjectHideFlags: 0
@@ -251,6 +250,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  bullet: {fileID: 9000764411624200130, guid: 3e10fc3b6520ed249ba564135bdb7b3e, type: 3}
+  shootPoint: {fileID: 7538982347484215002}
+  coolTime: 8
 --- !u!54 &1337380490329063609
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -378,7 +380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a1110600688a84aa75846f8067c1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 10
+  rock1: {fileID: 151664, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
+  shootPoint: {fileID: 4549408180458826281}
 --- !u!54 &6430903816764848772
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -507,6 +511,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  bullet: {fileID: 9000764411624200130, guid: 3e10fc3b6520ed249ba564135bdb7b3e, type: 3}
+  shootPoint: {fileID: 1887205322381145136}
+  coolTime: 5
 --- !u!54 &7461662359938418694
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -549,7 +556,7 @@ GameObject:
   - component: {fileID: 23202303624397802}
   - component: {fileID: 7337267131106557336}
   - component: {fileID: 8340384966226049099}
-  - component: {fileID: 4792283036543418605}
+  - component: {fileID: 2056012049722990823}
   m_Layer: 0
   m_Name: Spaceship_Base
   m_TagString: Untagged
@@ -651,7 +658,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 85.87788, y: 115.42377, z: 21.555723}
   m_Center: {x: 3.926995, y: 13.000184, z: -3.2814674}
---- !u!114 &4792283036543418605
+--- !u!114 &2056012049722990823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -660,10 +667,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1614117294494184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f2da9905821a204db647f05933f0a47, type: 3}
+  m_Script: {fileID: 11500000, guid: 096928e6496a66e408cfbb63b0927b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 25
 --- !u!1 &1887205322381145136
 GameObject:
   m_ObjectHideFlags: 0
