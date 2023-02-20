@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7011584692209995462}
   - component: {fileID: 2549203594877399171}
   - component: {fileID: -4041254660848072372}
-  - component: {fileID: 5308987131485366549}
+  - component: {fileID: -6495359600412790825}
   - component: {fileID: -4430315636845027533}
   - component: {fileID: 4950149038545578903}
   m_Layer: 0
@@ -156,8 +156,8 @@ MonoBehaviour:
   greenHealth: {fileID: 3258954266215266730}
   redHealth: {fileID: 1567700358925080511}
   health: 10
---- !u!65 &5308987131485366549
-BoxCollider:
+--- !u!64 &-6495359600412790825
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -166,9 +166,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.6811379, y: 2.9652786, z: 0.69546115}
-  m_Center: {x: 0, y: 0.35384807, z: 0.24783453}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: b10dbf1081a91c54d948bfca5f9038ce, type: 3}
 --- !u!54 &-4430315636845027533
 Rigidbody:
   m_ObjectHideFlags: 0

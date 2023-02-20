@@ -11,6 +11,10 @@ public class Manager : MonoBehaviour
     public GameObject asteroid1;
     public GameObject asteroid2;
     public GameObject asteroid3;
+    public GameObject waypoint1;
+    public GameObject waypoint2;
+    public GameObject waypoint3;
+    public GameObject waypoint4;
 
     public TMP_Text text;
     public GameObject playerPrefab;
