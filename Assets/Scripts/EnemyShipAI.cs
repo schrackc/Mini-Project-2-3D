@@ -7,6 +7,8 @@ public class EnemyShipAI : MonoBehaviour
     public float speed;
     public float health = 30;
     public Manager manager;
+    public ParticleSystem smallExplosion;
+    public ParticleSystem bigExplosion;
     //public GameObject baseShip;
 
     private bool introMoveEnd = false;
@@ -50,15 +52,11 @@ public class EnemyShipAI : MonoBehaviour
         }
 
         //Game ends player dies
-        if (health <= 0)
+        if (health <= 0 && !manager.bossDead)
         {
             manager.bossDead = true;
-            Destroy(this.gameObject);
-        }
-        
-        if (PlayerPrefs.GetString("Progress", "Stay") == "Finish")
-        {
-            //Play Explosion Particles
+            StartCoroutine(destroy());
+            
         }
     }
 
@@ -109,5 +107,21 @@ public class EnemyShipAI : MonoBehaviour
         Vector3.ClampMagnitude(direction, 2);
         direction = Vector3.Lerp(direction, Vector2.zero, 0.2f);
         transform.position += 25 * Time.deltaTime * direction;
+    }
+
+    private IEnumerator destroy()
+    {
+        bigExplosion = Instantiate(bigExplosion);
+        bigExplosion.transform.position = transform.position;
+        bigExplosion.Play();
+        bigExplosion = Instantiate(bigExplosion);
+        bigExplosion.transform.position = transform.position + new Vector3(-20, -5, 5); ;
+        bigExplosion.Play();
+        bigExplosion = Instantiate(bigExplosion);
+        bigExplosion.transform.position = transform.position + new Vector3(20,-5, 5);
+        bigExplosion.Play();
+        transform.position = new Vector3(0, -100, -100);
+        yield return new WaitForSeconds(4f);
+        Destroy(this.gameObject);
     }
 }

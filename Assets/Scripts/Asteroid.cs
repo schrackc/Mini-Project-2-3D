@@ -65,7 +65,9 @@ public class Asteroid : MonoBehaviour
         exp = Instantiate(exp);
         exp.transform.position = transform.position;
         exp.Play();
-        transform.position = new Vector3(0, -100, 20);
-        yield return new WaitForSeconds(4f);
+        transform.position = new Vector3(0, -500, 500);
+        yield return new WaitForSeconds(3f);
+        Destroy(exp);
+        Destroy(this);
     }
 }

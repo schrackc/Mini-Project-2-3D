@@ -33,7 +33,6 @@ public class Manager : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetString("Progress", "Stay");
         calm = GetComponent<AudioSource>();
         myScore = PlayerPrefs.GetInt("myScore", 0);
         player = Instantiate(playerPrefab);
@@ -74,9 +73,6 @@ public class Manager : MonoBehaviour
         {
             calm.PlayOneShot(calm.clip, 0.2f);
         }
-
-        if (PlayerPrefs.GetString("Progress", "Stay") == "Finish")
-            bossDead = true;
 
         PlayerPrefs.SetInt("myScore", gameScore);
         if (bossDead == true)
