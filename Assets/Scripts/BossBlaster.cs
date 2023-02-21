@@ -8,6 +8,7 @@ public class BossBlaster : MonoBehaviour
     private bool inCoolDown = false;
     public GameObject bullet;
     public GameObject shootPoint;
+    public ParticleSystem smallExplosion;
     public float coolTime = 5;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,10 @@ public class BossBlaster : MonoBehaviour
     {
         if(health <= 0)
         {
+            smallExplosion = Instantiate(smallExplosion);
+            smallExplosion.transform.position = transform.position;
+            smallExplosion.Play();
+            Debug.Log("Part Destroyed");
             Destroy(this.gameObject);
         }
 
@@ -28,8 +33,8 @@ public class BossBlaster : MonoBehaviour
             inCoolDown = true;
             GameObject go = Instantiate(bullet);
             go.transform.position = shootPoint.transform.position;
-            BulletMove b = go.GetComponent<BulletMove>();
-            b.speed = -2f;
+            BossBulletMove b = go.GetComponent<BossBulletMove>();
+            b.speed = 8f;
             //b.direction = new Vector3(0, 0, -1);
             StartCoroutine(CoolDown(coolTime));
         }

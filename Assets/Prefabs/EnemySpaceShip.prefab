@@ -183,8 +183,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50, y: 50, z: 10}
-  m_Center: {x: 0, y: 0, z: 50}
+  m_Size: {x: 70, y: 30, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6766505051702245250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -299,6 +299,7 @@ MonoBehaviour:
   health: 5
   bullet: {fileID: 9000764411624200130, guid: 3e10fc3b6520ed249ba564135bdb7b3e, type: 3}
   shootPoint: {fileID: 7538982347484215002}
+  smallExplosion: {fileID: 3568661551903429160, guid: 33aa2efce1af0584f859eeb342434e43, type: 3}
   coolTime: 8
 --- !u!54 &1337380490329063609
 Rigidbody:
@@ -430,6 +431,7 @@ MonoBehaviour:
   health: 10
   rock1: {fileID: 151664, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
   shootPoint: {fileID: 4549408180458826281}
+  smallExplosion: {fileID: 3568661551903429160, guid: 33aa2efce1af0584f859eeb342434e43, type: 3}
 --- !u!54 &6430903816764848772
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -560,6 +562,7 @@ MonoBehaviour:
   health: 5
   bullet: {fileID: 9000764411624200130, guid: 3e10fc3b6520ed249ba564135bdb7b3e, type: 3}
   shootPoint: {fileID: 1887205322381145136}
+  smallExplosion: {fileID: 3568661551903429160, guid: 33aa2efce1af0584f859eeb342434e43, type: 3}
   coolTime: 5
 --- !u!54 &7461662359938418694
 Rigidbody:
@@ -701,7 +704,7 @@ BoxCollider:
   m_GameObject: {fileID: 1614117294494184}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 85.87788, y: 115.42377, z: 21.555723}
   m_Center: {x: 3.926995, y: 13.000184, z: -3.2814674}

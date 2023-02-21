@@ -7,8 +7,8 @@ public class BossCannon : MonoBehaviour
     public int health = 5;
     private bool inCoolDown = false;
     public GameObject rock1;
-    //public GameObject rock2;
     public GameObject shootPoint;
+    public ParticleSystem smallExplosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,10 @@ public class BossCannon : MonoBehaviour
     {
         if (health <= 0)
         {
+            smallExplosion = Instantiate(smallExplosion);
+            smallExplosion.transform.position = transform.position;
+            smallExplosion.Play();
+            Debug.Log("Part Destroyed");
             Destroy(this.gameObject);
         }
 
