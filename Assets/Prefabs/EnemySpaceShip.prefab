@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  health: 30
+  health: 25
   manager: {fileID: 0}
   smallExplosion: {fileID: 1702128991185710156, guid: f7b5dec06f36c3e41af3a46eb9c5636a, type: 3}
   bigExplosion: {fileID: 3568661551903429160, guid: 33aa2efce1af0584f859eeb342434e43, type: 3}
