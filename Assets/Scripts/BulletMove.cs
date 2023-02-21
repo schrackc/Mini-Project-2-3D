@@ -27,7 +27,7 @@ public class BulletMove : MonoBehaviour
         
         Move();
 
-        if (this.transform.position.z > 100)
+        if (this.transform.position.z > 120)
             Destroy(this.gameObject);
     }
 
@@ -43,7 +43,7 @@ public class BulletMove : MonoBehaviour
         GameObject gameObject = other.gameObject;
         if (gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Destroy(this.gameObject);
         }
         if (gameObject.tag == "Enemy")

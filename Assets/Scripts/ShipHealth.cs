@@ -40,6 +40,7 @@ public class ShipHealth : MonoBehaviour
             health--;
             greenHealth.transform.localScale = new Vector3(health / startHealth, 0.05f, 0.001f);
             StartCoroutine(tempShow());
+            Debug.Log("Health is: " + health);
         }
     }
 

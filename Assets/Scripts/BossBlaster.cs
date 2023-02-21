@@ -8,7 +8,7 @@ public class BossBlaster : MonoBehaviour
     private bool inCoolDown = false;
     public GameObject bullet;
     public GameObject shootPoint;
-    public int coolTime = 5;
+    public float coolTime = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,17 @@ public class BossBlaster : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (!inCoolDown)
+        {
+            inCoolDown = true;
+            GameObject go = Instantiate(bullet);
+            go.transform.position = shootPoint.transform.position;
+            BulletMove b = go.GetComponent<BulletMove>();
+            b.speed = -2f;
+            //b.direction = new Vector3(0, 0, -1);
+            StartCoroutine(CoolDown(coolTime));
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,26 +43,19 @@ public class BossBlaster : MonoBehaviour
             health--;
         }
 
-        if (!inCoolDown)
-        {
-            inCoolDown = true;
-            GameObject go = Instantiate(bullet);
-            go.transform.position = shootPoint.transform.position;
-            BulletMove b = go.GetComponent<BulletMove>();
-            b.speed = 2f;
-            StartCoroutine(CoolDown());
-        }
+        
     }
 
-    IEnumerator CoolDown()
+    IEnumerator CoolDown(float downTime)
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(downTime);
         inCoolDown = false;
     }
 
-    IEnumerator waitToDrop(int downTime)
+    IEnumerator waitToDrop(float downTime)
     {
-        yield return new WaitForSeconds(downTime);
-        StartCoroutine(CoolDown());
+        yield return new WaitForSeconds(10);
+        Debug.Log("Play Time's Over!");
+        StartCoroutine(CoolDown(downTime));
     }
 }

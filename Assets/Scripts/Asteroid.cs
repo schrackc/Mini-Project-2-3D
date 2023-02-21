@@ -67,7 +67,9 @@ public class Asteroid : MonoBehaviour
         exp.Play();
         transform.position = new Vector3(0, -500, 500);
         yield return new WaitForSeconds(3f);
+        //ParticleSystemStopAction particleSystemStopAction = ParticleSystemStopAction.Destroy;
+      
         Destroy(exp);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }
