@@ -77,7 +77,6 @@ public class Manager : MonoBehaviour
         PlayerPrefs.SetInt("myScore", gameScore);
         if (bossDead == true)
         {
-            gameScore += 100;
             PlayerPrefs.SetInt("myScore", gameScore);
             if (gameScore > PlayerPrefs.GetInt("highScore", 0))
             {

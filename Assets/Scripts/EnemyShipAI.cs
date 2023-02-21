@@ -121,6 +121,7 @@ public class EnemyShipAI : MonoBehaviour
         bigExplosion.transform.position = transform.position + new Vector3(20,-5, 5);
         bigExplosion.Play();
         transform.position = new Vector3(0, -100, -100);
+        manager.incrementScore(100);
         yield return new WaitForSeconds(4f);
         Destroy(this.gameObject);
     }
